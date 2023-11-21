@@ -1,9 +1,9 @@
-let userForm = document.getElementById("user-form");
+et userForm = document.getElementById("user-form");
 
 const retrieveEntries = () => {
-  let entries = localStorage.getItem("user-entries");
-  if (entries) {
-    return JSON.parse(entries);
+  let a = localStorage.getItem("user-entries");
+  if (a) {
+    return JSON.parse(a);
   } else {
     return [];
   }
@@ -11,10 +11,10 @@ const retrieveEntries = () => {
 
 let userEntries = retrieveEntries();
 
-const displayEntries = () => {
-  const entries = retrieveEntries();
+const sai = () => {
+  const a = retrieveEntries();
   
-  const tableEntries = entries.map((entry) => {
+  const tableEntries = a.map((entry) => {
     const nameCell = `<td class='border px-4 py-2'>${entry.name}</td>`;
     const emailCell = `<td class='border px-4 py-2'>${entry.email}</td>`;
     const passwordCell = `<td class='border px-4 py-2'>${entry.password}</td>`;
@@ -75,8 +75,8 @@ const saveUserForm = (event) => {
   userEntries.push(entry);
   
   localStorage.setItem("user-entries", JSON.stringify(userEntries));
-  displayEntries();
+  sai();
 };
 
 userForm.addEventListener("submit", saveUserForm);
-displayEntries();
+sai();
